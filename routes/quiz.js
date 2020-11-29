@@ -5,8 +5,6 @@ const Quiz = require('../models/quiz')
 /* GET home page. */
 router.get('/', (req, res) => {
   const show = !req.session.vote;
-  console.log(req.session.vote)
-  console.log(show);
 
   Quiz.find({}, (err, data) =>{
     let sum = 0;
