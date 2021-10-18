@@ -6,7 +6,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-mongoose.connect(process.env.db, {
+mongoose.connect(process.env.DB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -37,9 +37,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(
   cookieSession({
     name: "session",
-    keys: process.env.keySession,
+    keys: process.env.KEY_SESSION,
     // Cookie Options
-    maxAge: process.env.maxAgeSession, // 24 hours
+    maxAge: process.env.MAX_AGE_SESSION, // 24 hours
   })
 );
 
