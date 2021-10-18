@@ -17,10 +17,12 @@ db.once("open", function () {
   console.log("db connected");
 });
 
+
 var indexRouter = require("./routes/index");
 var newsRouter = require("./routes/news");
 var quizRouter = require("./routes/quiz");
 var adminRouter = require("./routes/admin");
+
 
 var app = express();
 
@@ -47,6 +49,7 @@ app.use("/", indexRouter);
 app.use("/news", newsRouter);
 app.use("/quiz", quizRouter);
 app.use("/admin", adminRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
